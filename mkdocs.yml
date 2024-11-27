@@ -1,7 +1,7 @@
 site_name: GeoAI Tutorials
 site_description: A collection of Jupyter notebook examples for using GeoAI
 site_author: Qiusheng Wu
-site_url: https://open.gishub.org/GeoAI-Tutorials
+site_url: https://geoai-tutorials.gishub.org
 
 repo_url: https://github.com/opengeos/GeoAI-Tutorials
 
