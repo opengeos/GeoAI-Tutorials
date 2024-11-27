@@ -1,0 +1,63 @@
+site_name: GeoAI Tutorials
+site_description: A collection of Jupyter notebook examples for using GeoAI
+site_author: Qiusheng Wu
+site_url: https:/https://open.gishub.org/GeoAI-Tutorials
+
+repo_url: https://github.com/opengeos/GeoAI-Tutorials
+
+copyright: "Copyright &copy; 2024 - 2024 Qiusheng Wu"
+
+theme:
+  palette:
+    - scheme: default
+      #   primary: blue
+      #   accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - search.highlight
+  custom_dir: "docs/overrides"
+  font:
+    text: Google Sans
+    code: Regular
+
+plugins:
+  - search
+  - mkdocstrings
+  - git-revision-date
+  - mkdocs-jupyter:
+      include_source: true
+      ignore_h1_titles: true
+      execute: false
+      allow_errors: false
+      ignore: ["name.ipynb"]
+      execute_ignore: ["path/*.ipynb"]
+
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: true
+
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXX
+
+nav:
+  - Home: index.md
+  - PDFM:
+      - PDFM/zillow_home_value.ipynb
+  - Blog: https://blog.gishub.org
+  - YouTube Channel: https://youtube.com/@giswqs
+  - Report Issues: https://github.com/opengeos/GeoAI-Tutorials/issues
