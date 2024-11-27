@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://open.gishub.org/GeoAI-Tutorials/</loc>
+         <loc>https://geoai-tutorials.gishub.org/</loc>
          <lastmod>2024-11-27</lastmod>
     </url>
     <url>
-         <loc>https://open.gishub.org/GeoAI-Tutorials/PDFM/zillow_home_value/</loc>
+         <loc>https://geoai-tutorials.gishub.org/PDFM/zillow_home_value/</loc>
          <lastmod>2024-11-27</lastmod>
     </url>
 </urlset>
