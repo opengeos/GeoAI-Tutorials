@@ -1,0 +1,47 @@
+name: docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "0.4.16"
+          # enable-cache: true
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          uv venv
+          uv pip install -r requirements.txt
+
+      - name: Install optional dependencies
+        run: |
+          uv pip install --find-links https://girder.github.io/large_image_wheels GDAL pyproj
+
+      - name: Test import
+        run: |
+          uv run python -c "import leafmap; print('leafmap import successful')"
+          uv run python -c "from osgeo import gdal; print('gdal import successful')"
+          uv run gdalinfo --version
+
+      - name: Install mkdocs
+        run: |
+          uv pip install -r requirements_docs.txt
+          uv run mkdocs gh-deploy --force
