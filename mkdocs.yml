@@ -58,6 +58,6 @@ nav:
   - Home: index.md
   - PDFM:
       - PDFM/zillow_home_value.ipynb
-  - Blog: https://blog.gishub.org
+  - Opengeos: https://github.com/opengeos
   - YouTube Channel: https://youtube.com/@giswqs
   - Report Issues: https://github.com/opengeos/GeoAI-Tutorials/issues
