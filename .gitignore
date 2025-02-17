@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.csv
 *.geojson
+jupytext.toml
 
 # C extensions
 *.so
