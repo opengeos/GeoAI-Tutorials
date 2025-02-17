@@ -59,6 +59,8 @@ nav:
   - PDFM:
       - PDFM/zillow_home_value.ipynb
       - PDFM/map_pdfm_features.ipynb
+  - Workshops:
+      - PDFM/AIforGood_2025.ipynb
   - Opengeos: https://github.com/opengeos
   - YouTube Channel: https://youtube.com/@giswqs
   - Report Issues: https://github.com/opengeos/GeoAI-Tutorials/issues
