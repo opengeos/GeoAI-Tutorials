@@ -59,6 +59,7 @@ nav:
   - PDFM:
       - PDFM/zillow_home_value.ipynb
       - PDFM/map_pdfm_features.ipynb
+      - PDFM/pdfm_superresolution.ipynb
   - Workshops:
       - workshops/AIforGood_2025.ipynb
   - Opengeos: https://github.com/opengeos

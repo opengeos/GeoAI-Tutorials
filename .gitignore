@@ -5,6 +5,7 @@ __pycache__/
 *.csv
 *.geojson
 jupytext.toml
+private/
 
 # C extensions
 *.so
