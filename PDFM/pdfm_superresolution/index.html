@@ -12,13 +12,13 @@
         <meta name="author" content="Qiusheng Wu">
       
       
-        <link rel="canonical" href="https://geoai-tutorials.gishub.org/PDFM/map_pdfm_features/">
+        <link rel="canonical" href="https://geoai-tutorials.gishub.org/PDFM/pdfm_superresolution/">
       
       
-        <link rel="prev" href="../zillow_home_value/">
+        <link rel="prev" href="../map_pdfm_features/">
       
       
-        <link rel="next" href="../pdfm_superresolution/">
+        <link rel="next" href="../../workshops/AIforGood_2025/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Map pdfm features - GeoAI Tutorials</title>
+        <title>Pdfm superresolution - GeoAI Tutorials</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#useful-resources" class="md-skip">
+        <a href="#pdfm-super-resolution-with-zillow-housing-data" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Map pdfm features
+              Pdfm superresolution
             
           </span>
         </div>
@@ -337,6 +337,28 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../map_pdfm_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Map pdfm features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -346,12 +368,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Map pdfm features
+    Pdfm superresolution
     
   </span>
   
@@ -363,7 +387,7 @@
         
   
   <span class="md-ellipsis">
-    Map pdfm features
+    Pdfm superresolution
     
   </span>
   
@@ -376,6 +400,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -384,180 +410,93 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#useful-resources" class="md-nav__link">
+  <a href="#data-preparation" class="md-nav__link">
     <span class="md-ellipsis">
-      Useful Resources
+      Data Preparation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-a-csv-file-of-the-embeddings-using-this-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download a csv file of the embeddings using this link.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-download-and-load-a-few-variables-from-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Download and load a few variables from GitHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Visualizations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Visualizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-the-county-and-zcta-zipcode-census-tabulation-area-level-geojson-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download the county and zcta (Zipcode census tabulation area) level geojson file.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-out-an-embedding-dimension-spatially" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map out an embedding dimension spatially
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-the-embeddings-in-a-prediction-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applying the embeddings in a prediction task
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#superresolution-train-the-model-on-counties-and-make-predictions-for-zip-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Superresolution - Train the model on counties and make predictions for zip code
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#import-libraries" class="md-nav__link">
+  <a href="#imputation-zip-zip" class="md-nav__link">
     <span class="md-ellipsis">
-      Import Libraries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-zillow-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Download Zillow Data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#process-zillow-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Process Zillow Data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-access-to-pdfm-embeddings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Request access to PDFM Embeddings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-county-boundaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load county boundaries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#join-home-value-data-and-county-boundaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Join home value data and county boundaries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-home-values-in-2d" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize home values in 2D
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-home-values-in-3d" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize home values in 3D
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-pdfm-county-embeddings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load PDFM county embeddings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-pdfm-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize PDFM features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#join-zillow-and-pdfm-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Join Zillow and PDFM Data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#split-train-and-test-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Split Train and Test Data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fit-linear-regression-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fit Linear Regression Model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluate-linear-regression-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluate Linear Regression Model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#join-predicted-values-with-county-boundaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Join predicted values with county boundaries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-actual-home-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize actual home values
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-predicted-home-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize predicted home values
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-difference-between-predicted-and-actual-home-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize difference between predicted and actual home values
+      Imputation - zip -&gt; zip
     </span>
   </a>
   
@@ -567,28 +506,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pdfm_superresolution/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Pdfm superresolution
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -746,6 +663,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -754,180 +673,93 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#useful-resources" class="md-nav__link">
+  <a href="#data-preparation" class="md-nav__link">
     <span class="md-ellipsis">
-      Useful Resources
+      Data Preparation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-a-csv-file-of-the-embeddings-using-this-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download a csv file of the embeddings using this link.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-download-and-load-a-few-variables-from-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Download and load a few variables from GitHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Visualizations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Visualizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-the-county-and-zcta-zipcode-census-tabulation-area-level-geojson-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download the county and zcta (Zipcode census tabulation area) level geojson file.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-out-an-embedding-dimension-spatially" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map out an embedding dimension spatially
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-the-embeddings-in-a-prediction-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applying the embeddings in a prediction task
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#superresolution-train-the-model-on-counties-and-make-predictions-for-zip-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Superresolution - Train the model on counties and make predictions for zip code
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#import-libraries" class="md-nav__link">
+  <a href="#imputation-zip-zip" class="md-nav__link">
     <span class="md-ellipsis">
-      Import Libraries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-zillow-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Download Zillow Data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#process-zillow-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Process Zillow Data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-access-to-pdfm-embeddings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Request access to PDFM Embeddings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-county-boundaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load county boundaries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#join-home-value-data-and-county-boundaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Join home value data and county boundaries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-home-values-in-2d" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize home values in 2D
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-home-values-in-3d" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize home values in 3D
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-pdfm-county-embeddings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load PDFM county embeddings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-pdfm-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize PDFM features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#join-zillow-and-pdfm-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Join Zillow and PDFM Data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#split-train-and-test-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Split Train and Test Data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fit-linear-regression-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fit Linear Regression Model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluate-linear-regression-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluate Linear Regression Model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#join-predicted-values-with-county-boundaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Join predicted values with county boundaries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-actual-home-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize actual home values
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-predicted-home-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize predicted home values
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-difference-between-predicted-and-actual-home-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize difference between predicted and actual home values
+      Imputation - zip -&gt; zip
     </span>
   </a>
   
@@ -946,7 +778,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/PDFM/map_pdfm_features/map_pdfm_features.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/PDFM/pdfm_superresolution/pdfm_superresolution.ipynb" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     </a>
 
@@ -958,8 +790,6 @@
   
   
 
-
-  <h1>Map pdfm features</h1>
 
 <script>
 (function (global, factory) {
@@ -1403,14 +1233,30 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/opengeos/GeoAI-Tutorials/blob/main/docs/PDFM/map_pdfm_features.ipynb"><img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p><strong>Mapping PDFM Features and Predicted Housing Prices</strong></p>
-<h2 id="useful-resources">Useful Resources<a class="anchor-link" href="#useful-resources">¶</a></h2><ul>
-<li><a href="https://github.com/google-research/population-dynamics">Google's Population Dynamics Foundation Model (PDFM)</a></li>
-<li>Request access to PDFM embeddings <a href="https://github.com/google-research/population-dynamics?tab=readme-ov-file#getting-access-to-the-embeddings">here</a></li>
-<li>Zillow data can be accessed <a href="https://www.zillow.com/research/data/">here</a></li>
-</ul>
-<h2 id="installation">Installation<a class="anchor-link" href="#installation">¶</a></h2><p>Uncomment and run the following cell to install the required libraries.</p>
+<h1 id="pdfm-super-resolution-with-zillow-housing-data">PDFM Super Resolution with Zillow Housing Data<a class="anchor-link" href="#pdfm-super-resolution-with-zillow-housing-data">¶</a></h1><p>This notebook is adapted from the PDFM notebook example <a href="https://github.com/google-research/population-dynamics/blob/master/notebooks/pdfm_superresolution_and_imputation.ipynb">here</a>. Credits to the original authors.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="data-preparation">Data Preparation<a class="anchor-link" href="#data-preparation">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="step-1-download-a-csv-file-of-the-embeddings-using-this-link">Step 1: Download a csv file of the embeddings using this <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZLIqTCIx1-OiBzUnqXZpu_k5M223ZvMmqwQhMZ_0TkaWhEQ/viewform">link</a>.<a class="anchor-link" href="#step-1-download-a-csv-file-of-the-embeddings-using-this-link">¶</a></h3><p>The county and ZCTA (zipcode census tabulation area) embeddings are available in different files.</p>
+<p>Here we assume that you have obtained the embeddings and uploaded them to a Google Drive directory called <code>pdfm_embeddings/v0/us</code>.</p>
 </div>
 </div>
 </div>
@@ -1433,22 +1279,33 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install "leafmap[maplibre]" scikit-learn</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ridge</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">metrics</span> <span class="k">as</span> <span class="n">skmetrics</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">lightgbm</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">lgbm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">preprocessing</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># %pip install "leafmap[maplibre]" scikit-learn</div>
+<div class="clipboard-copy-txt" id="cell-1">import math
+import pandas as pd
+import numpy as np
+import geopandas as gpd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import Ridge
+from sklearn import metrics as skmetrics
+import lightgbm as lgbm
+from sklearn.pipeline import make_pipeline
+from sklearn import preprocessing
+import seaborn as sns</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="import-libraries">Import Libraries<a class="anchor-link" href="#import-libraries">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1471,36 +1328,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">leafmap.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate_model</span><span class="p">,</span> <span class="n">plot_actual_vs_predicted</span><span class="p">,</span> <span class="n">download_file</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">leafmap.maplibregl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">leafmap</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">BASE_PATH</span> <span class="o">=</span> <span class="s2">"./"</span>  <span class="c1"># Set this to the path where your data files are located</span>
+
+<span class="n">county_embeddings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">BASE_PATH</span> <span class="o">+</span> <span class="s2">"county_embeddings.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"place"</span><span class="p">)</span>
+<span class="n">zip_embeddings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">BASE_PATH</span> <span class="o">+</span> <span class="s2">"zcta_embeddings.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"place"</span><span class="p">)</span>
+<span class="n">embeddings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">county_embeddings</span><span class="p">,</span> <span class="n">zip_embeddings</span><span class="p">])</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import os
-import pandas as pd
-import geopandas as gpd
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.neighbors import KNeighborsRegressor
-from leafmap.common import evaluate_model, plot_actual_vs_predicted, download_file
-import leafmap.maplibregl as leafmap</div>
+<div class="clipboard-copy-txt" id="cell-2">BASE_PATH = "./"  # Set this to the path where your data files are located
+
+county_embeddings = pd.read_csv(BASE_PATH + "county_embeddings.csv").set_index("place")
+zip_embeddings = pd.read_csv(BASE_PATH + "zcta_embeddings.csv").set_index("place")
+embeddings = pd.concat([county_embeddings, zip_embeddings])</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="download-zillow-data">Download Zillow Data<a class="anchor-link" href="#download-zillow-data">¶</a></h2><p>Download the Zillow home value data at the county level.</p>
 </div>
 </div>
 </div>
@@ -1523,13 +1363,24 @@ import leafmap.maplibregl as leafmap</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">zhvi_url</span> <span class="o">=</span> <span class="s2">"https://github.com/opengeos/datasets/releases/download/us/zillow_home_value_index_by_county.csv"</span>
-<span class="n">zhvi_file</span> <span class="o">=</span> <span class="s2">"data/zillow_home_value_index_by_county.csv"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">embedding_features</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"feature</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">330</span><span class="p">)]</span>
+<span class="n">embeddings</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">zhvi_url = "https://github.com/opengeos/datasets/releases/download/us/zillow_home_value_index_by_county.csv"
-zhvi_file = "data/zillow_home_value_index_by_county.csv"</div>
+<div class="clipboard-copy-txt" id="cell-3">embedding_features = [f"feature{x}" for x in range(330)]
+embeddings.head(2)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="step-2-download-and-load-a-few-variables-from-github">Step 2: Download and load a few variables from GitHub<a class="anchor-link" href="#step-2-download-and-load-a-few-variables-from-github">¶</a></h3>
 </div>
 </div>
 </div>
@@ -1552,24 +1403,13 @@ zhvi_file = "data/zillow_home_value_index_by_county.csv"</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">zhvi_file</span><span class="p">):</span>
-    <span class="n">download_file</span><span class="p">(</span><span class="n">zhvi_url</span><span class="p">,</span> <span class="n">zhvi_file</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">zhvi_county_url</span> <span class="o">=</span> <span class="s2">"https://github.com/opengeos/datasets/releases/download/us/zillow_home_value_index_by_county.csv"</span>
+<span class="n">zhvi_zipcode_url</span> <span class="o">=</span> <span class="s2">"https://github.com/opengeos/datasets/releases/download/us/zillow_home_value_index_by_zipcode.csv"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">if not os.path.exists(zhvi_file):
-    download_file(zhvi_url, zhvi_file)</div>
+<div class="clipboard-copy-txt" id="cell-4">zhvi_county_url = "https://github.com/opengeos/datasets/releases/download/us/zillow_home_value_index_by_county.csv"
+zhvi_zipcode_url = "https://github.com/opengeos/datasets/releases/download/us/zillow_home_value_index_by_zipcode.csv"</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="process-zillow-data">Process Zillow Data<a class="anchor-link" href="#process-zillow-data">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1592,30 +1432,25 @@ zhvi_file = "data/zillow_home_value_index_by_county.csv"</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">zhvi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="n">zhvi_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"StateCodeFIPS"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span> <span class="s2">"MunicipalCodeFIPS"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">}</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">zhvi_county_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="n">zhvi_county_url</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"StateCodeFIPS"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span> <span class="s2">"MunicipalCodeFIPS"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">}</span>
 <span class="p">)</span>
-<span class="n">zhvi_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="s2">"geoId/"</span> <span class="o">+</span> <span class="n">zhvi_df</span><span class="p">[</span><span class="s2">"StateCodeFIPS"</span><span class="p">]</span> <span class="o">+</span> <span class="n">zhvi_df</span><span class="p">[</span><span class="s2">"MunicipalCodeFIPS"</span><span class="p">]</span>
-<span class="n">zhvi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">zhvi_county_df</span><span class="p">[</span><span class="s2">"place"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"geoId/"</span> <span class="o">+</span> <span class="n">zhvi_county_df</span><span class="p">[</span><span class="s2">"StateCodeFIPS"</span><span class="p">]</span> <span class="o">+</span> <span class="n">zhvi_county_df</span><span class="p">[</span><span class="s2">"MunicipalCodeFIPS"</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">zhvi_county_df</span> <span class="o">=</span> <span class="n">zhvi_county_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"place"</span><span class="p">)</span>
+<span class="n">zhvi_county_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">zhvi_df = pd.read_csv(
-    zhvi_file, dtype={"StateCodeFIPS": "string", "MunicipalCodeFIPS": "string"}
+<div class="clipboard-copy-txt" id="cell-5">zhvi_county_df = pd.read_csv(
+    zhvi_county_url, dtype={"StateCodeFIPS": "string", "MunicipalCodeFIPS": "string"}
 )
-zhvi_df.index = "geoId/" + zhvi_df["StateCodeFIPS"] + zhvi_df["MunicipalCodeFIPS"]
-zhvi_df.head()</div>
+zhvi_county_df["place"] = (
+    "geoId/" + zhvi_county_df["StateCodeFIPS"] + zhvi_county_df["MunicipalCodeFIPS"]
+)
+zhvi_county_df = zhvi_county_df.set_index("place")
+zhvi_county_df.head()</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="request-access-to-pdfm-embeddings">Request access to PDFM Embeddings<a class="anchor-link" href="#request-access-to-pdfm-embeddings">¶</a></h2><p>To request access to PDFM embeddings, please follow the instructions <a href="https://github.com/google-research/population-dynamics?tab=readme-ov-file#getting-access-to-the-embeddings">here</a>.</p>
 </div>
 </div>
 </div>
@@ -1638,26 +1473,17 @@ zhvi_df.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">county_geojson</span> <span class="o">=</span> <span class="s2">"data/county.geojson"</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">county_geojson</span><span class="p">):</span>
-    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"Please request the embeddings from Google"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">zhvi_zipcode_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">zhvi_zipcode_url</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"RegionName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">})</span>
+<span class="n">zhvi_zipcode_df</span><span class="p">[</span><span class="s2">"place"</span><span class="p">]</span> <span class="o">=</span> <span class="n">zhvi_zipcode_df</span><span class="p">[</span><span class="s2">"RegionName"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"zip/</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">zhvi_zipcode_df</span> <span class="o">=</span> <span class="n">zhvi_zipcode_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"place"</span><span class="p">)</span>
+<span class="n">zhvi_zipcode_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">county_geojson = "data/county.geojson"
-if not os.path.exists(county_geojson):
-    raise FileNotFoundError("Please request the embeddings from Google")</div>
+<div class="clipboard-copy-txt" id="cell-6">zhvi_zipcode_df = pd.read_csv(zhvi_zipcode_url, dtype={"RegionName": "string"})
+zhvi_zipcode_df["place"] = zhvi_zipcode_df["RegionName"].apply(lambda x: f"zip/{x}")
+zhvi_zipcode_df = zhvi_zipcode_df.set_index("place")
+zhvi_zipcode_df.head()</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="load-county-boundaries">Load county boundaries<a class="anchor-link" href="#load-county-boundaries">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1680,26 +1506,13 @@ if not os.path.exists(county_geojson):
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">county_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">county_geojson</span><span class="p">)</span>
-<span class="n">county_gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"place"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">county_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">zhvi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">zhvi_county_df</span><span class="p">,</span> <span class="n">zhvi_zipcode_df</span><span class="p">])</span>
+<span class="n">zhvi_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">county_gdf = gpd.read_file(county_geojson)
-county_gdf.set_index("place", inplace=True)
-county_gdf.head()</div>
+<div class="clipboard-copy-txt" id="cell-7">zhvi_df = pd.concat([zhvi_county_df, zhvi_zipcode_df])
+zhvi_df.head()</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="join-home-value-data-and-county-boundaries">Join home value data and county boundaries<a class="anchor-link" href="#join-home-value-data-and-county-boundaries">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1722,13 +1535,9 @@ county_gdf.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">zhvi_df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">county_gdf</span><span class="p">)</span>
-<span class="n">zhvi_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">"geometry"</span><span class="p">)</span>
-<span class="n">zhvi_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">zhvi_df</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">df = zhvi_df.join(county_gdf)
-zhvi_gdf = gpd.GeoDataFrame(df, geometry="geometry")
-zhvi_gdf.head()</div>
+<div class="clipboard-copy-txt" id="cell-8">zhvi_df[-5:]</div>
 </div>
 </div>
 </div>
@@ -1753,26 +1562,11 @@ zhvi_gdf.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">column</span> <span class="o">=</span> <span class="s2">"2024-10-31"</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">zhvi_gdf</span><span class="p">[[</span><span class="s2">"RegionName"</span><span class="p">,</span> <span class="s2">"State"</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="s2">"geometry"</span><span class="p">]]</span>
-<span class="n">gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">zhvi_df</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">column = "2024-10-31"
-gdf = zhvi_gdf[["RegionName", "State", column, "geometry"]]
-gdf.head()</div>
+<div class="clipboard-copy-txt" id="cell-9">len(zhvi_df)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-home-values-in-2d">Visualize home values in 2D<a class="anchor-link" href="#visualize-home-values-in-2d">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1795,55 +1589,13 @@ gdf.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">)</span>
-<span class="n">first_symbol_id</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">find_first_symbol_layer</span><span class="p">()[</span><span class="s2">"id"</span><span class="p">]</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span>
-    <span class="n">gdf</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">column</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="s2">"Median Home Value"</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">"Median Home Value"</span><span class="p">,</span>
-    <span class="n">before_id</span><span class="o">=</span><span class="n">first_symbol_id</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">zhvi_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">"inner"</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">m = leafmap.Map(style="liberty")
-first_symbol_id = m.find_first_symbol_layer()["id"]
-m.add_data(
-    gdf,
-    cmap="Blues",
-    column=column,
-    legend_title="Median Home Value",
-    name="Median Home Value",
-    before_id=first_symbol_id,
-)
-m.add_layer_control()
-m</div>
+<div class="clipboard-copy-txt" id="cell-10">df = embeddings.join(zhvi_df, how="inner")
+df.head()</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/df616803-87e9-4326-be8c-9de5a72a2d95"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-home-values-in-3d">Visualize home values in 3D<a class="anchor-link" href="#visualize-home-values-in-3d">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1866,33 +1618,9 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span>
-    <span class="n">gdf</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">column</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="s2">"Median Home Value"</span><span class="p">,</span>
-    <span class="n">extrude</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">scale_factor</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">before_id</span><span class="o">=</span><span class="n">first_symbol_id</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">"Median Home Value"</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">m = leafmap.Map(style="liberty", pitch=60)
-m.add_data(
-    gdf,
-    cmap="Blues",
-    column=column,
-    legend_title="Median Home Value",
-    extrude=True,
-    scale_factor=3,
-    before_id=first_symbol_id,
-    name="Median Home Value",
-)
-m.add_layer_control()
-m</div>
+<div class="clipboard-copy-txt" id="cell-11">df[-3:]</div>
 </div>
 </div>
 </div>
@@ -1905,7 +1633,7 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/65f085bb-b781-41b8-8408-440ed202b766"/></p>
+<h2 id="data-visualizations">Data Visualizations<a class="anchor-link" href="#data-visualizations">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1916,7 +1644,7 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="load-pdfm-county-embeddings">Load PDFM county embeddings<a class="anchor-link" href="#load-pdfm-county-embeddings">¶</a></h2>
+<h3 id="download-the-county-and-zcta-zipcode-census-tabulation-area-level-geojson-file">Download the county and zcta (Zipcode census tabulation area) level geojson file.<a class="anchor-link" href="#download-the-county-and-zcta-zipcode-census-tabulation-area-level-geojson-file">¶</a></h3><p>The county and zcta level geojson file are available in the same folder as the embeddings. Download the geojson file and upload to Google Colab.</p>
 </div>
 </div>
 </div>
@@ -1939,9 +1667,11 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">embeddings_file_path</span> <span class="o">=</span> <span class="s2">"data/county_embeddings.csv"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">county_geo</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">BASE_PATH</span> <span class="o">+</span> <span class="s2">"county.geojson"</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"place"</span><span class="p">)</span>
+<span class="n">zip_geo</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">BASE_PATH</span> <span class="o">+</span> <span class="s2">"zcta.geojson"</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"place"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">embeddings_file_path = "data/county_embeddings.csv"</div>
+<div class="clipboard-copy-txt" id="cell-12">county_geo = gpd.read_file(BASE_PATH + "county.geojson").set_index("place")
+zip_geo = gpd.read_file(BASE_PATH + "zcta.geojson").set_index("place")</div>
 </div>
 </div>
 </div>
@@ -1966,11 +1696,13 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">embeddings_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">embeddings_file_path</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"place"</span><span class="p">)</span>
-<span class="n">embeddings_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">county_geo</span><span class="p">,</span> <span class="n">zip_geo</span><span class="p">])</span>
+<span class="n">embeddings</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">geo</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13">embeddings_df = pd.read_csv(embeddings_file_path).set_index("place")
-embeddings_df.head()</div>
+<div class="clipboard-copy-txt" id="cell-13">geo = pd.concat([county_geo, zip_geo])
+embeddings = gpd.GeoDataFrame(embeddings, geometry=geo.geometry)
+embeddings.shape</div>
 </div>
 </div>
 </div>
@@ -1995,26 +1727,13 @@ embeddings_df.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">embeddings_df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">county_gdf</span><span class="p">)</span>
-<span class="n">embeddings_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">"geometry"</span><span class="p">)</span>
-<span class="n">embeddings_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">zhvi_df</span><span class="p">)</span><span class="o">.</span><span class="n">set_geometry</span><span class="p">(</span><span class="s2">"geometry"</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">df = embeddings_df.join(county_gdf)
-embeddings_gdf = gpd.GeoDataFrame(df, geometry="geometry")
-embeddings_gdf.head()</div>
+<div class="clipboard-copy-txt" id="cell-14">df = embeddings.join(zhvi_df).set_geometry("geometry")
+df.head(1)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-pdfm-features">Visualize PDFM features<a class="anchor-link" href="#visualize-pdfm-features">¶</a></h2><p>Select any of the 329 PDFM features to visualize.</p>
 </div>
 </div>
 </div>
@@ -2037,15 +1756,22 @@ embeddings_gdf.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">column</span> <span class="o">=</span> <span class="s2">"feature329"</span>  <span class="c1"># Change this to the feature you want to use</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">embeddings_gdf</span><span class="p">[[</span><span class="n">column</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">,</span> <span class="s2">"county"</span><span class="p">,</span> <span class="s2">"geometry"</span><span class="p">]]</span>
-<span class="n">gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"county_id"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"county"</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">"state"</span><span class="p">]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">column = "feature329"  # Change this to the feature you want to use
-gdf = embeddings_gdf[[column, "state", "county", "geometry"]]
-gdf.head()</div>
+<div class="clipboard-copy-txt" id="cell-15">df["county_id"] = df["county"] + df["state"]</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="map-out-an-embedding-dimension-spatially">Map out an embedding dimension spatially<a class="anchor-link" href="#map-out-an-embedding-dimension-spatially">¶</a></h3>
 </div>
 </div>
 </div>
@@ -2068,42 +1794,25 @@ gdf.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span>
-    <span class="n">gdf</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">column</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
-    <span class="n">before_id</span><span class="o">=</span><span class="n">first_symbol_id</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_locale</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">states</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">counties</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">states</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">counties</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="nb">filter</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">counties</span><span class="p">:</span>
+        <span class="nb">filter</span> <span class="o">&amp;=</span> <span class="n">df</span><span class="o">.</span><span class="n">county</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">counties</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="nb">filter</span><span class="p">]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">m = leafmap.Map(style="liberty")
-m.add_data(
-    gdf,
-    cmap="Blues",
-    column=column,
-    legend_title=column,
-    before_id=first_symbol_id,
-    name=column,
-)
-m.add_layer_control()
-m</div>
+<div class="clipboard-copy-txt" id="cell-16">def get_locale(df, index, states=None, counties=None):
+    df = df[df.index.isin(index)]
+    if not states and not counties:
+        return df
+    filter = df.state.isin(states)
+    if counties:
+        filter &amp;= df.county.isin(counties)
+    return df[filter]</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/efa4983d-89d2-4dcc-9cd6-fefeee069bf7"/></p>
 </div>
 </div>
 </div>
@@ -2126,57 +1835,17 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span>
-    <span class="n">gdf</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">column</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
-    <span class="n">before_id</span><span class="o">=</span><span class="n">first_symbol_id</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
-    <span class="n">extrude</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">scale_factor</span><span class="o">=</span><span class="mf">0.00005</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title Map out an embedding dimension feature0 spatially across all counties in US</span>
+<span class="n">feature</span> <span class="o">=</span> <span class="n">embedding_features</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">get_locale</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">feature</span> <span class="o">+</span> <span class="s2">" in counties"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-17">m = leafmap.Map(style="liberty", pitch=60)
-m.add_data(
-    gdf,
-    cmap="Blues",
-    column=column,
-    legend_title=column,
-    before_id=first_symbol_id,
-    name=column,
-    extrude=True,
-    scale_factor=0.00005,
-)
-m.add_layer_control()
-m</div>
+<div class="clipboard-copy-txt" id="cell-17"># @title Map out an embedding dimension feature0 spatially across all counties in US
+feature = embedding_features[300]
+ax = get_locale(embeddings, embeddings.index).plot(feature)
+_ = ax.set_title(feature + " in counties")</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/fd1b233b-2be0-47c3-b2d0-f53601020604"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="join-zillow-and-pdfm-data">Join Zillow and PDFM Data<a class="anchor-link" href="#join-zillow-and-pdfm-data">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2199,13 +1868,40 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">zhvi_df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">embeddings_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">"inner"</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title Map out an embedding dimension feature0 spatially across all counties and zipcodes in NY state</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">state</span> <span class="o">=</span> <span class="s2">"NY"</span>
+<span class="n">get_locale</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">county_embeddings</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">states</span><span class="o">=</span><span class="p">[</span><span class="n">state</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">get_locale</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">zip_embeddings</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">states</span><span class="o">=</span><span class="p">[</span><span class="n">state</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">feature</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"counties"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"zip codes"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">data = zhvi_df.join(embeddings_df, how="inner")
-data.head()</div>
+<div class="clipboard-copy-txt" id="cell-18"># @title Map out an embedding dimension feature0 spatially across all counties and zipcodes in NY state
+fig, ax = plt.subplots(1, 2, figsize=(8, 4))
+state = "NY"
+get_locale(embeddings, county_embeddings.index, states=[state]).plot(feature, ax=ax[0])
+get_locale(embeddings, zip_embeddings.index, states=[state]).plot(feature, ax=ax[1])
+fig.suptitle(f"{feature} in {state}")
+ax[0].set(title="counties")
+ax[1].set(title="zip codes")
+plt.setp(ax, xticks=[], yticks=[])
+fig.tight_layout()</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="applying-the-embeddings-in-a-prediction-task">Applying the embeddings in a prediction task<a class="anchor-link" href="#applying-the-embeddings-in-a-prediction-task">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2228,13 +1924,260 @@ data.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">embedding_features</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"feature</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">330</span><span class="p">)]</span>
-<span class="n">label</span> <span class="o">=</span> <span class="s2">"2024-10-31"</span>  <span class="c1"># Change this to the date you want to predict</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Evaluates the model performance on the given dataframe.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df: A pandas DataFrame with columns 'y' and 'y_pred'.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A dictionary of performance metrics.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Ensure necessary columns exist and drop rows with NaN or zero in 'y'</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">{</span><span class="s2">"y"</span><span class="p">,</span> <span class="s2">"y_pred"</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"DataFrame must contain 'y' and 'y_pred' columns"</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"y"</span><span class="p">,</span> <span class="s2">"y_pred"</span><span class="p">])</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">skmetrics</span><span class="o">.</span><span class="n">r2_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"y_pred"</span><span class="p">])</span>
+    <span class="n">correlation</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"y_pred"</span><span class="p">]))</span>
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">skmetrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"y_pred"</span><span class="p">]))</span>
+    <span class="n">mae</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">skmetrics</span><span class="o">.</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"y_pred"</span><span class="p">]))</span>
+    <span class="n">mape</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">skmetrics</span><span class="o">.</span><span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"y_pred"</span><span class="p">]))</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"r2"</span><span class="p">:</span> <span class="n">r2</span><span class="p">,</span>
+        <span class="s2">"rmse"</span><span class="p">:</span> <span class="n">rmse</span><span class="p">,</span>
+        <span class="s2">"mae"</span><span class="p">:</span> <span class="n">mae</span><span class="p">,</span>
+        <span class="s2">"mape"</span><span class="p">:</span> <span class="n">mape</span><span class="p">,</span>
+        <span class="s2">"correlation"</span><span class="p">:</span> <span class="n">correlation</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">subset_eval</span><span class="p">(</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">county_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">state</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">gpred</span><span class="p">:</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">,</span>
+    <span class="n">visualize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"Greys"</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Runs intra-county or intra-state evaluation and visualizes the results.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        label: The label for the title of the visualization.</span>
+<span class="sd">        county_name: The specific county name to filter.</span>
+<span class="sd">        state: The specific state name to filter.</span>
+<span class="sd">        gpred: GeoDataFrame containing 'y', 'y_pred', 'state', and 'county' columns.</span>
+<span class="sd">        visualize: Whether to display visualizations.</span>
+<span class="sd">        cmap: Colormap for visualizations.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A dictionary of performance metrics.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Apply filters based on state and county name</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">gpred</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">state</span><span class="p">:</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="n">subset</span><span class="p">[</span><span class="s2">"state"</span><span class="p">]</span> <span class="o">==</span> <span class="n">state</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">county_name</span><span class="p">:</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="n">subset</span><span class="p">[</span><span class="s2">"county"</span><span class="p">]</span> <span class="o">==</span> <span class="n">county_name</span><span class="p">]</span>
+
+    <span class="c1"># Drop rows where 'y' is NaN</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"y"</span><span class="p">,</span> <span class="s2">"y_pred"</span><span class="p">])</span>
+    <span class="n">eval_metrics</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">visualize</span><span class="p">:</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+        <span class="c1"># Scatter plot of predicted vs actual</span>
+        <span class="n">subset</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">"y"</span><span class="p">,</span> <span class="s2">"y_pred"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"darkgray"</span><span class="p">)</span>
+        <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">subset</span><span class="p">[[</span><span class="s2">"y"</span><span class="p">,</span> <span class="s2">"y_pred"</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+            <span class="n">subset</span><span class="p">[[</span><span class="s2">"y"</span><span class="p">,</span> <span class="s2">"y_pred"</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+        <span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">],</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'r=</span><span class="si">{</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s2">"correlation"</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, mae=</span><span class="si">{</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s2">"mae"</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Maps of actual and predicted values</span>
+        <span class="n">subset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="s2">"y"</span><span class="p">,</span>
+            <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">vmin</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
+            <span class="n">vmax</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+            <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"fraction"</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span> <span class="s2">"pad"</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
+        <span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Actual"</span><span class="p">)</span>
+        <span class="n">subset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">"y_pred"</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Predicted"</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">county_name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">eval_metrics</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_predictions_df</span><span class="p">(</span>
+    <span class="n">predictions</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">test_df</span><span class="p">:</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">,</span> <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Creates a GeoDataFrame with predictions, true labels, and geographic info.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        predictions: A sequence of predictions.</span>
+<span class="sd">        test_df: The original test GeoDataFrame that the predictions are based on.</span>
+<span class="sd">        label: The column name for the true label in `test_df`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A GeoDataFrame for evaluation and visualizations.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">label</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">test_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"The specified label '</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">' does not exist in test_df columns."</span>
+        <span class="p">)</span>
+
+    <span class="n">df_predictions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span><span class="s2">"y"</span><span class="p">:</span> <span class="n">test_df</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="s2">"y_pred"</span><span class="p">:</span> <span class="n">predictions</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="n">test_df</span><span class="o">.</span><span class="n">index</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">test_df</span><span class="p">[[</span><span class="s2">"geometry"</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">,</span> <span class="s2">"county"</span><span class="p">]]</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_predictions</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19">embedding_features = [f"feature{x}" for x in range(330)]
-label = "2024-10-31"  # Change this to the date you want to predict</div>
+<div class="clipboard-copy-txt" id="cell-19">def evaluate(df: pd.DataFrame) -&gt; dict:
+    """Evaluates the model performance on the given dataframe.
+
+    Args:
+        df: A pandas DataFrame with columns 'y' and 'y_pred'.
+
+    Returns:
+        A dictionary of performance metrics.
+    """
+    # Ensure necessary columns exist and drop rows with NaN or zero in 'y'
+    if not {"y", "y_pred"}.issubset(df.columns):
+        raise ValueError("DataFrame must contain 'y' and 'y_pred' columns")
+
+    df = df.dropna(subset=["y", "y_pred"])
+    df = df[df["y"] != 0]
+
+    r2 = skmetrics.r2_score(df["y"], df["y_pred"])
+    correlation = float(df["y"].corr(df["y_pred"]))
+    rmse = math.sqrt(skmetrics.mean_squared_error(df["y"], df["y_pred"]))
+    mae = float(skmetrics.mean_absolute_error(df["y"], df["y_pred"]))
+    mape = float(skmetrics.mean_absolute_percentage_error(df["y"], df["y_pred"]))
+
+    return {
+        "r2": r2,
+        "rmse": rmse,
+        "mae": mae,
+        "mape": mape,
+        "correlation": correlation,
+    }
+
+
+def subset_eval(
+    label: str,
+    county_name: str,
+    state: str,
+    gpred: gpd.GeoDataFrame,
+    visualize: bool = True,
+    cmap: str = "Greys",
+) -&gt; dict:
+    """Runs intra-county or intra-state evaluation and visualizes the results.
+
+    Args:
+        label: The label for the title of the visualization.
+        county_name: The specific county name to filter.
+        state: The specific state name to filter.
+        gpred: GeoDataFrame containing 'y', 'y_pred', 'state', and 'county' columns.
+        visualize: Whether to display visualizations.
+        cmap: Colormap for visualizations.
+
+    Returns:
+        A dictionary of performance metrics.
+    """
+    # Apply filters based on state and county name
+    subset = gpred.copy()
+    if state:
+        subset = subset[subset["state"] == state]
+    if county_name:
+        subset = subset[subset["county"] == county_name]
+
+    # Drop rows where 'y' is NaN
+    subset = subset.dropna(subset=["y", "y_pred"])
+    eval_metrics = evaluate(subset)
+
+    if visualize:
+        _, ax = plt.subplots(1, 3, figsize=(12, 4))
+
+        # Scatter plot of predicted vs actual
+        subset.plot.scatter("y", "y_pred", alpha=0.8, ax=ax[2], color="darkgray")
+        x0, x1 = (
+            subset[["y", "y_pred"]].min().min(),
+            subset[["y", "y_pred"]].max().max(),
+        )
+        ax[2].plot([x0, x1], [x0, x1], ls="--", color="black")
+        ax[2].set_title(
+            f'r={eval_metrics["correlation"]:.2f}, mae={eval_metrics["mae"]:.2f}'
+        )
+
+        # Maps of actual and predicted values
+        subset.plot(
+            "y",
+            legend=True,
+            ax=ax[0],
+            vmin=x0,
+            vmax=x1,
+            cmap=cmap,
+            legend_kwds={"fraction": 0.02, "pad": 0.05},
+        )
+        ax[0].set_title("Actual")
+        subset.plot("y_pred", legend=False, ax=ax[1], vmin=x0, vmax=x1, cmap=cmap)
+        ax[1].set_title("Predicted")
+
+        plt.setp(ax[:2], xticks=[], yticks=[])
+        plt.suptitle(f"{label} - {county_name}, {state}")
+        plt.tight_layout()
+
+    return eval_metrics
+
+
+def make_predictions_df(
+    predictions: np.ndarray, test_df: gpd.GeoDataFrame, label: str
+) -&gt; gpd.GeoDataFrame:
+    """Creates a GeoDataFrame with predictions, true labels, and geographic info.
+
+    Args:
+        predictions: A sequence of predictions.
+        test_df: The original test GeoDataFrame that the predictions are based on.
+        label: The column name for the true label in `test_df`.
+
+    Returns:
+        A GeoDataFrame for evaluation and visualizations.
+    """
+    if label not in test_df.columns:
+        raise ValueError(
+            f"The specified label '{label}' does not exist in test_df columns."
+        )
+
+    df_predictions = pd.DataFrame(
+        {"y": test_df[label], "y_pred": predictions}, index=test_df.index
+    )
+    return test_df[["geometry", "state", "county"]].join(df_predictions)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="superresolution-train-the-model-on-counties-and-make-predictions-for-zip-code">Superresolution - Train the model on counties and make predictions for zip code<a class="anchor-link" href="#superresolution-train-the-model-on-counties-and-make-predictions-for-zip-code">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2257,22 +2200,19 @@ label = "2024-10-31"  # Change this to the date you want to predict</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title Train on counties and predict for zip codes</span>
+<span class="n">label</span> <span class="o">=</span> <span class="s2">"2025-01-31"</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">county_geo</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">zip_geo</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-20">data = data.dropna(subset=[label])</div>
+<div class="clipboard-copy-txt" id="cell-20"># @title Train on counties and predict for zip codes
+label = "2025-01-31"
+data = df[df[label].notna()]
+train = data[data.index.isin(county_geo.index)]
+test = data[data.index.isin(zip_geo.index)]</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="split-train-and-test-data">Split Train and Test Data<a class="anchor-link" href="#split-train-and-test-data">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2295,34 +2235,11 @@ label = "2024-10-31"  # Change this to the date you want to predict</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">embedding_features</span> <span class="o">+</span> <span class="p">[</span><span class="n">label</span><span class="p">]]</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">embedding_features</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
-
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-21">data = data[embedding_features + [label]]
-X = data[embedding_features]
-y = data[label]
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)</div>
+<div class="clipboard-copy-txt" id="cell-21">len(train), len(test)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="fit-linear-regression-model">Fit Linear Regression Model<a class="anchor-link" href="#fit-linear-regression-model">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2345,26 +2262,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-22">model = LinearRegression()
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)</div>
+<div class="clipboard-copy-txt" id="cell-22">train.head()</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="evaluate-linear-regression-model">Evaluate Linear Regression Model<a class="anchor-link" href="#evaluate-linear-regression-model">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2387,13 +2289,9 @@ y_pred = model.predict(X_test)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">evaluation_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"y"</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="s2">"y_pred"</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">})</span>
-<span class="n">metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">evaluation_df</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-23">evaluation_df = pd.DataFrame({"y": y_test, "y_pred": y_pred})
-metrics = evaluate_model(evaluation_df)
-print(metrics)</div>
+<div class="clipboard-copy-txt" id="cell-23">test.head()</div>
 </div>
 </div>
 </div>
@@ -2418,49 +2316,19 @@ print(metrics)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">xy_lim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">)</span>
-<span class="n">plot_actual_vs_predicted</span><span class="p">(</span>
-    <span class="n">evaluation_df</span><span class="p">,</span>
-    <span class="n">xlim</span><span class="o">=</span><span class="n">xy_lim</span><span class="p">,</span>
-    <span class="n">ylim</span><span class="o">=</span><span class="n">xy_lim</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Actual vs Predicted Home Values"</span><span class="p">,</span>
-    <span class="n">x_label</span><span class="o">=</span><span class="s2">"Actual Home Value"</span><span class="p">,</span>
-    <span class="n">y_label</span><span class="o">=</span><span class="s2">"Predicted Home Value"</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">embedding_features</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">embedding_features</span><span class="p">])</span>
+<span class="n">gdf_predictions</span> <span class="o">=</span> <span class="n">make_predictions_df</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">evaluate</span><span class="p">(</span><span class="n">gdf_predictions</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-24">xy_lim = (0, 1_000_000)
-plot_actual_vs_predicted(
-    evaluation_df,
-    xlim=xy_lim,
-    ylim=xy_lim,
-    title="Actual vs Predicted Home Values",
-    x_label="Actual Home Value",
-    y_label="Predicted Home Value",
-)</div>
+<div class="clipboard-copy-txt" id="cell-24">model = Ridge()
+model.fit(train[embedding_features], train[label])
+predictions = model.predict(test[embedding_features])
+gdf_predictions = make_predictions_df(predictions, test, label)
+evaluate(gdf_predictions)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/a16a15c6-508b-40c9-aa57-8e98b8b8e216"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="join-predicted-values-with-county-boundaries">Join predicted values with county boundaries<a class="anchor-link" href="#join-predicted-values-with-county-boundaries">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2483,30 +2351,15 @@ plot_actual_vs_predicted(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">evaluation_df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">"difference"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"y_pred"</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span>
-<span class="n">evaluation_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">"geometry"</span><span class="p">)</span>
-<span class="n">evaluation_gdf</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"category"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">,</span> <span class="n">column</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">evaluation_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title Visualize some test set predictions</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">subset_eval</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="s2">"Harris County"</span><span class="p">,</span> <span class="s2">"TX"</span><span class="p">,</span> <span class="n">gdf_predictions</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">subset_eval</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="s2">"Greenville County"</span><span class="p">,</span> <span class="s2">"SC"</span><span class="p">,</span> <span class="n">gdf_predictions</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-25">df = evaluation_df.join(gdf)
-df["difference"] = df["y_pred"] - df["y"]
-evaluation_gdf = gpd.GeoDataFrame(df, geometry="geometry")
-evaluation_gdf.drop(columns=["category", "color", column], inplace=True)
-evaluation_gdf.head()</div>
+<div class="clipboard-copy-txt" id="cell-25"># @title Visualize some test set predictions
+_ = subset_eval(label, "Harris County", "TX", gdf_predictions, cmap="Blues")
+_ = subset_eval(label, "Greenville County", "SC", gdf_predictions, cmap="Blues")</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-actual-home-values">Visualize actual home values<a class="anchor-link" href="#visualize-actual-home-values">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2529,33 +2382,11 @@ evaluation_gdf.head()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span>
-    <span class="n">evaluation_gdf</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">column</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="s2">"Actual Home Value"</span><span class="p">,</span>
-    <span class="n">before_id</span><span class="o">=</span><span class="n">first_symbol_id</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">"Actual Home Value"</span><span class="p">,</span>
-    <span class="n">extrude</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">scale_factor</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title Evaluate over a state by setting the county to an empty string.</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">subset_eval</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"NY"</span><span class="p">,</span> <span class="n">gdf_predictions</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-26">m = leafmap.Map(style="liberty", pitch=60)
-m.add_data(
-    evaluation_gdf,
-    cmap="Blues",
-    column="y",
-    legend_title="Actual Home Value",
-    before_id=first_symbol_id,
-    name="Actual Home Value",
-    extrude=True,
-    scale_factor=3,
-)
-m.add_layer_control()
-m</div>
+<div class="clipboard-copy-txt" id="cell-26"># @title Evaluate over a state by setting the county to an empty string.
+_ = subset_eval(label, "", "NY", gdf_predictions, cmap="Blues")</div>
 </div>
 </div>
 </div>
@@ -2568,18 +2399,7 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/a86401d5-defd-4277-877b-c8f8c5e07651"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-predicted-home-values">Visualize predicted home values<a class="anchor-link" href="#visualize-predicted-home-values">¶</a></h2>
+<h2 id="imputation-zip-zip">Imputation - zip -&gt; zip<a class="anchor-link" href="#imputation-zip-zip">¶</a></h2><p>Train on zipcodes in a subset of counties.</p>
 </div>
 </div>
 </div>
@@ -2602,57 +2422,91 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span>
-    <span class="n">evaluation_gdf</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">column</span><span class="o">=</span><span class="s2">"y_pred"</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="s2">"Predicted Home Value"</span><span class="p">,</span>
-    <span class="n">before_id</span><span class="o">=</span><span class="n">first_symbol_id</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">"Predicted Home Value"</span><span class="p">,</span>
-    <span class="n">extrude</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">scale_factor</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title train on zip codes in 20% of the counties, test on the remaining 80%.</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_train_test_split</span><span class="p">(</span><span class="n">training_fraction</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">zip_embeddings</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># Split the zip codes by county into train/test sets.</span>
+    <span class="n">train_counties</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">"county_id"</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="n">training_fraction</span><span class="p">)</span><span class="o">.</span><span class="n">county_id</span>
+    <span class="p">)</span>
+    <span class="n">train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">county_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">train_counties</span><span class="p">)]</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">"# training counties:"</span><span class="p">,</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">train_counties</span><span class="p">),</span>
+        <span class="s2">"</span><span class="se">\n</span><span class="s2"># training zip codes:"</span><span class="p">,</span>
+        <span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s2">"</span><span class="se">\n</span><span class="s2"># test zip codes:"</span><span class="p">,</span>
+        <span class="n">test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_imputation_model</span><span class="p">(</span>
+    <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">min_population</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">model_class</span><span class="o">=</span><span class="n">Ridge</span><span class="p">,</span> <span class="n">model_kwargs</span><span class="o">=</span><span class="p">{}</span>
+<span class="p">):</span>
+    <span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[(</span><span class="n">train</span><span class="o">.</span><span class="n">population</span> <span class="o">&gt;=</span> <span class="n">min_population</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">train</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[(</span><span class="n">test</span><span class="o">.</span><span class="n">population</span> <span class="o">&gt;=</span> <span class="n">min_population</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">test</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">MinMaxScaler</span><span class="p">(),</span> <span class="n">model_class</span><span class="p">(</span><span class="o">**</span><span class="n">model_kwargs</span><span class="p">))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">embedding_features</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="n">embedding_features</span><span class="p">])</span>
+    <span class="n">gdf_predictions</span> <span class="o">=</span> <span class="n">make_predictions_df</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">gdf_predictions</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">results</span>
+
+
+<span class="c1"># Increasing this value generally improves performance.</span>
+<span class="n">training_fraction</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">label</span> <span class="o">=</span> <span class="s2">"2025-01-31"</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">get_train_test_split</span><span class="p">(</span><span class="n">training_fraction</span><span class="p">)</span>
+<span class="n">model</span><span class="p">,</span> <span class="n">results</span> <span class="o">=</span> <span class="n">run_imputation_model</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">results</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-27">m = leafmap.Map(style="liberty", pitch=60)
-m.add_data(
-    evaluation_gdf,
-    cmap="Blues",
-    column="y_pred",
-    legend_title="Predicted Home Value",
-    before_id=first_symbol_id,
-    name="Predicted Home Value",
-    extrude=True,
-    scale_factor=3,
-)
-m.add_layer_control()
-m</div>
+<div class="clipboard-copy-txt" id="cell-27"># @title train on zip codes in 20% of the counties, test on the remaining 80%.
+
+
+def get_train_test_split(training_fraction=0.8):
+    data = df[df.index.isin(zip_embeddings.index)].copy()
+    # Split the zip codes by county into train/test sets.
+    train_counties = (
+        data.drop_duplicates("county_id").sample(frac=training_fraction).county_id
+    )
+    train = data[data.county_id.isin(train_counties)]
+    test = data[~data.index.isin(train.index)]
+    print(
+        "# training counties:",
+        len(train_counties),
+        "\n# training zip codes:",
+        train.shape[0],
+        "\n# test zip codes:",
+        test.shape[0],
+    )
+    return train, test
+
+
+def run_imputation_model(
+    train, test, label, min_population=500, model_class=Ridge, model_kwargs={}
+):
+    train = train[(train.population &gt;= min_population) &amp; train[label].notna()]
+    test = test[(test.population &gt;= min_population) &amp; test[label].notna()]
+    model = make_pipeline(preprocessing.MinMaxScaler(), model_class(**model_kwargs))
+    model.fit(train[embedding_features], train[label])
+    predictions = model.predict(test[embedding_features])
+    gdf_predictions = make_predictions_df(predictions, test, label)
+    results = evaluate(gdf_predictions)
+    return model, results
+
+
+# Increasing this value generally improves performance.
+training_fraction = 0.2
+label = "2025-01-31"
+train, test = get_train_test_split(training_fraction)
+model, results = run_imputation_model(train, test, label)
+results</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/6bfe1c89-968e-4eef-84cc-98bcf07c8acb"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-difference-between-predicted-and-actual-home-values">Visualize difference between predicted and actual home values<a class="anchor-link" href="#visualize-difference-between-predicted-and-actual-home-values">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2675,33 +2529,181 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span>
-    <span class="n">evaluation_gdf</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"coolwarm"</span><span class="p">,</span>
-    <span class="n">column</span><span class="o">=</span><span class="s2">"difference"</span><span class="p">,</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="s2">"y_pred-y"</span><span class="p">,</span>
-    <span class="n">before_id</span><span class="o">=</span><span class="n">first_symbol_id</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">"Difference"</span><span class="p">,</span>
-    <span class="n">extrude</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">scale_factor</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title Visualize a few counties from the test set.</span>
+<span class="n">test_counties</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">county_id</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">large_counties</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">county_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">test_counties</span><span class="p">)]</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"population"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[[</span><span class="s2">"state"</span><span class="p">,</span> <span class="s2">"county"</span><span class="p">,</span> <span class="s2">"population"</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
-<span class="n">m</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">large_counties</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">subset_eval</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">county</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">gdf_predictions</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-28">m = leafmap.Map(style="liberty", pitch=60)
-m.add_data(
-    evaluation_gdf,
-    cmap="coolwarm",
-    column="difference",
-    legend_title="y_pred-y",
-    before_id=first_symbol_id,
-    name="Difference",
-    extrude=True,
-    scale_factor=3,
+<div class="clipboard-copy-txt" id="cell-28"># @title Visualize a few counties from the test set.
+test_counties = test.county_id.unique()
+large_counties = (
+    df[df.county_id.isin(test_counties)]
+    .sort_values("population", ascending=False)[["state", "county", "population"]]
+    .head(4)
 )
-m.add_layer_control()
-m</div>
+for _, row in large_counties.iterrows():
+    _ = subset_eval(label, row.county, row.state, gdf_predictions, cmap="Blues")</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-29">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title Try other labels.</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"2024-01-31"</span><span class="p">,</span>
+    <span class="s2">"2024-02-29"</span><span class="p">,</span>
+    <span class="s2">"2024-03-31"</span><span class="p">,</span>
+    <span class="s2">"2024-04-30"</span><span class="p">,</span>
+    <span class="s2">"2024-05-31"</span><span class="p">,</span>
+    <span class="s2">"2024-06-30"</span><span class="p">,</span>
+    <span class="s2">"2024-07-31"</span><span class="p">,</span>
+    <span class="s2">"2024-08-31"</span><span class="p">,</span>
+    <span class="s2">"2024-09-30"</span><span class="p">,</span>
+    <span class="s2">"2024-10-31"</span><span class="p">,</span>
+    <span class="s2">"2024-11-30"</span><span class="p">,</span>
+    <span class="s2">"2024-12-31"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">get_train_test_split</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">models_by_label</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">metrics_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"label"</span><span class="p">,</span> <span class="s2">"correlation"</span><span class="p">,</span> <span class="s2">"r2"</span><span class="p">,</span> <span class="s2">"rmse"</span><span class="p">,</span> <span class="s2">"mae"</span><span class="p">,</span> <span class="s2">"mape"</span><span class="p">,</span> <span class="s2">"model"</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+    <span class="n">models_by_label</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">results</span> <span class="o">=</span> <span class="n">run_imputation_model</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">"model"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"linear"</span>
+    <span class="n">metrics_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">metrics_df</span><span class="p">)]</span> <span class="o">=</span> <span class="n">results</span>
+
+<span class="n">metrics_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-29"># @title Try other labels.
+labels = [
+    "2024-01-31",
+    "2024-02-29",
+    "2024-03-31",
+    "2024-04-30",
+    "2024-05-31",
+    "2024-06-30",
+    "2024-07-31",
+    "2024-08-31",
+    "2024-09-30",
+    "2024-10-31",
+    "2024-11-30",
+    "2024-12-31",
+]
+train, test = get_train_test_split(0.8)
+models_by_label = {}
+metrics_df = pd.DataFrame(
+    columns=["label", "correlation", "r2", "rmse", "mae", "mape", "model"]
+)
+for label in labels:
+    models_by_label[label], results = run_imputation_model(train, test, label)
+    results["label"] = label
+    results["model"] = "linear"
+    metrics_df.loc[len(metrics_df)] = results
+
+metrics_df.round(3)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-30">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title Try LightGBM models instead of linear.</span>
+
+<span class="c1"># This will take a few minutes to run.</span>
+<span class="n">models_by_label_lgbm</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">metrics_df_lgbm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"label"</span><span class="p">,</span> <span class="s2">"r2"</span><span class="p">,</span> <span class="s2">"rmse"</span><span class="p">,</span> <span class="s2">"mae"</span><span class="p">,</span> <span class="s2">"mape"</span><span class="p">,</span> <span class="s2">"correlation"</span><span class="p">,</span> <span class="s2">"model"</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+    <span class="n">models_by_label_lgbm</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">results</span> <span class="o">=</span> <span class="n">run_imputation_model</span><span class="p">(</span>
+        <span class="n">train</span><span class="p">,</span>
+        <span class="n">test</span><span class="p">,</span>
+        <span class="n">label</span><span class="p">,</span>
+        <span class="n">model_class</span><span class="o">=</span><span class="n">lgbm</span><span class="o">.</span><span class="n">LGBMRegressor</span><span class="p">,</span>
+        <span class="n">model_kwargs</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">"min_child_samples"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+            <span class="s2">"importance_type"</span><span class="p">:</span> <span class="s2">"gain"</span><span class="p">,</span>
+            <span class="s2">"n_estimators"</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+            <span class="s2">"learning_rate"</span><span class="p">:</span> <span class="mf">0.04</span><span class="p">,</span>
+            <span class="s2">"force_col_wise"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+    <span class="n">results</span><span class="p">[</span><span class="s2">"model"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"lgbm"</span>
+    <span class="n">metrics_df_lgbm</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">metrics_df_lgbm</span><span class="p">)]</span> <span class="o">=</span> <span class="n">results</span>
+
+<span class="n">metrics_df_lgbm</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-30"># @title Try LightGBM models instead of linear.
+
+# This will take a few minutes to run.
+models_by_label_lgbm = {}
+metrics_df_lgbm = pd.DataFrame(
+    columns=["label", "r2", "rmse", "mae", "mape", "correlation", "model"]
+)
+for label in labels:
+    models_by_label_lgbm[label], results = run_imputation_model(
+        train,
+        test,
+        label,
+        model_class=lgbm.LGBMRegressor,
+        model_kwargs={
+            "min_child_samples": 40,
+            "importance_type": "gain",
+            "n_estimators": 400,
+            "learning_rate": 0.04,
+            "force_col_wise": True,
+        },
+    )
+    results["label"] = label
+    results["model"] = "lgbm"
+    metrics_df_lgbm.loc[len(metrics_df_lgbm)] = results
+
+metrics_df_lgbm.round(3)</div>
 </div>
 </div>
 </div>
@@ -2714,7 +2716,92 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/4ae58eb1-ab28-49e5-b352-d769a32d3e5c"/></p>
+<p>The LGBM results are mostly comparable with the linear model. They can be improved with more iterations and lower learning rate. You can also try setting <code>feature_fraction=0.5</code>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-31">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @title LightGBM feature importance</span>
+
+<span class="n">features</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"trends"</span><span class="p">:</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">embedding_features</span><span class="p">[:</span><span class="mi">128</span><span class="p">]),</span>
+    <span class="s2">"maps"</span><span class="p">:</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">embedding_features</span><span class="p">[</span><span class="mi">128</span><span class="p">:</span><span class="mi">256</span><span class="p">]),</span>
+    <span class="s2">"weather"</span><span class="p">:</span> <span class="p">(</span><span class="mi">74</span><span class="p">,</span> <span class="n">embedding_features</span><span class="p">[</span><span class="mi">256</span><span class="p">:]),</span>
+<span class="p">}</span>
+<span class="n">all_importance</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models_by_label_lgbm</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">importance</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">model</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">embedding_features</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"importance"</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">importance</span><span class="p">[</span><span class="s2">"importance"</span><span class="p">]</span> <span class="o">=</span> <span class="n">importance</span><span class="p">[</span><span class="s2">"importance"</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">feature</span><span class="p">,</span> <span class="n">dims</span> <span class="ow">in</span> <span class="n">features</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">importance</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">"feature"</span><span class="p">]</span> <span class="o">=</span> <span class="n">feature</span>
+    <span class="n">importance</span> <span class="o">=</span> <span class="n">importance</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"feature"</span><span class="p">)</span><span class="o">.</span><span class="n">importance</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">importance</span><span class="p">[</span><span class="s2">"importance"</span><span class="p">]</span> <span class="o">=</span> <span class="n">importance</span><span class="o">.</span><span class="n">importance</span> <span class="o">/</span> <span class="n">importance</span><span class="o">.</span><span class="n">importance</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">importance</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+    <span class="n">all_importance</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">importance</span><span class="p">)</span>
+<span class="n">all_importance</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_importance</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">all_importance</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"label"</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">"importance"</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s2">"feature"</span><span class="p">,</span>
+    <span class="n">hue_order</span><span class="o">=</span><span class="n">features</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-31"># @title LightGBM feature importance
+
+features = {
+    "trends": (128, embedding_features[:128]),
+    "maps": (128, embedding_features[128:256]),
+    "weather": (74, embedding_features[256:]),
+}
+all_importance = []
+for label, model in models_by_label_lgbm.items():
+    importance = pd.DataFrame(
+        model[1].feature_importances_, index=embedding_features, columns=["importance"]
+    )
+    importance["importance"] = importance["importance"].abs()
+    for feature, dims in features.items():
+        importance.loc[dims[1], "feature"] = feature
+    importance = importance.groupby("feature").importance.sum().reset_index()
+    importance["importance"] = importance.importance / importance.importance.sum() * 100
+    importance["label"] = label
+    all_importance.append(importance)
+all_importance = pd.concat(all_importance)
+_, ax = plt.subplots(figsize=(10, 3))
+sns.barplot(
+    data=all_importance,
+    x="label",
+    y="importance",
+    hue="feature",
+    hue_order=features.keys(),
+    ax=ax,
+)
+_ = plt.xticks(rotation=30)</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2746,7 +2833,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2024-11-28
+    2025-02-19
   </span>
 
     
